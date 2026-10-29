@@ -1,0 +1,105 @@
+[
+  {
+    "name": "us_drought_national",
+    "description": "Weekly U.S. Drought Monitor drought-severity statistics for the nation: percent of area or percent of population in categories None, D0 (abnormally dry) through D4 (exceptional drought). Categories are cumulative (D1+ means D1 through D4 combined, i.e. 'at least moderate drought'). Covers the contiguous 48 states (conus), the contiguous states plus Alaska/Hawaii/Puerto Rico (total), or both at once (us). Published weekly — map valid every Tuesday, released the following Thursday. Omit dates for the latest available map.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "area": {
+          "type": "string",
+          "enum": [
+            "conus",
+            "total",
+            "us"
+          ],
+          "description": "conus = contiguous 48 states only. total = contiguous states plus Alaska, Hawaii, and Puerto Rico. us = both rows at once. Default conus."
+        },
+        "measure": {
+          "type": "string",
+          "enum": [
+            "area",
+            "population"
+          ],
+          "description": "'area' = percent of land area in each category (default). 'population' = percent of the area's population in each category."
+        },
+        "start_date": {
+          "type": "string",
+          "description": "Earliest map date, YYYY-MM-DD or M/D/YYYY. Omit for the latest single map."
+        },
+        "end_date": {
+          "type": "string",
+          "description": "Latest map date, YYYY-MM-DD or M/D/YYYY. Omit for the latest single map."
+        }
+      }
+    }
+  },
+  {
+    "name": "us_drought_state",
+    "description": "Weekly U.S. Drought Monitor drought-severity statistics for one U.S. state or territory: percent of area or percent of population in categories None, D0 (abnormally dry) through D4 (exceptional drought). Categories are cumulative (D1+ means D1 through D4 combined). Published weekly — map valid every Tuesday, released the following Thursday. Omit dates for the latest available map.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "description": "State or territory name, two-letter postal abbreviation, or two-digit FIPS code, e.g. 'Texas', 'TX', or '48'."
+        },
+        "measure": {
+          "type": "string",
+          "enum": [
+            "area",
+            "population"
+          ],
+          "description": "'area' = percent of land area in each category (default). 'population' = percent of the state's population in each category."
+        },
+        "start_date": {
+          "type": "string",
+          "description": "Earliest map date, YYYY-MM-DD or M/D/YYYY. Omit for the latest single map."
+        },
+        "end_date": {
+          "type": "string",
+          "description": "Latest map date, YYYY-MM-DD or M/D/YYYY. Omit for the latest single map."
+        }
+      },
+      "required": [
+        "state"
+      ]
+    }
+  },
+  {
+    "name": "us_drought_county",
+    "description": "Weekly U.S. Drought Monitor drought-severity statistics for one U.S. county: percent of county area or percent of county population in categories None, D0 (abnormally dry) through D4 (exceptional drought). Categories are cumulative (D1+ means D1 through D4 combined). Published weekly — map valid every Tuesday, released the following Thursday. Match by state plus county name (e.g. state 'TX', county 'Travis'), or pass the county's 5-digit FIPS code directly. Omit dates for the latest available map.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "description": "State name or two-letter postal abbreviation, e.g. 'Texas' or 'TX'. Required unless fips is given."
+        },
+        "county": {
+          "type": "string",
+          "description": "County name, with or without the word 'County' (e.g. 'Travis' or 'Travis County'). Required unless fips is given."
+        },
+        "fips": {
+          "type": "string",
+          "description": "The county's 5-digit FIPS code. Use instead of state+county when known."
+        },
+        "measure": {
+          "type": "string",
+          "enum": [
+            "area",
+            "population"
+          ],
+          "description": "'area' = percent of the county's land area in each category (default). 'population' = percent of the county's population in each category."
+        },
+        "start_date": {
+          "type": "string",
+          "description": "Earliest map date, YYYY-MM-DD or M/D/YYYY. Omit for the latest single map."
+        },
+        "end_date": {
+          "type": "string",
+          "description": "Latest map date, YYYY-MM-DD or M/D/YYYY. Omit for the latest single map."
+        }
+      }
+    }
+  }
+]

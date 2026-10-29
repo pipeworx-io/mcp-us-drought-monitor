@@ -3,7 +3,7 @@
   "name": "io.github.pipeworx-io/us-drought-monitor",
   "title": "Us Drought Monitor",
   "description": "US Drought Monitor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "websiteUrl": "https://pipeworx.io/packs/us-drought-monitor",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-us-drought-monitor",

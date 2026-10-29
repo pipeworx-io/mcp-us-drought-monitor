@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-us-drought-monitor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "US Drought Monitor",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-us-drought-monitor": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "us-drought-monitor"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-us-drought-monitor.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/us-drought-monitor",
   "pipeworx": {
-    "sourceHash": "v1-289b8f55fea800c31ee73e79064568637e07bed615c437ce7c8b9c9e1756c47e",
-    "sourceCommit": "a03f96ed672b8c149593c64ecbf30280cabf084c"
+    "mode": "gateway",
+    "slug": "us-drought-monitor",
+    "gatewaySlug": "us-drought-monitor",
+    "sourceHash": "v1-599a2b1f91da827860f2547fa97b5bdc16d560f0de86eb8d242c62f10247b586",
+    "sourceCommit": "98853f34516646cb7c4c1460f09249b262c0269e"
   }
 }
