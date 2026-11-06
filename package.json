@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-us-drought-monitor",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "US Drought Monitor",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "us-drought-monitor",
     "gatewaySlug": "us-drought-monitor",
-    "sourceHash": "v1-599a2b1f91da827860f2547fa97b5bdc16d560f0de86eb8d242c62f10247b586",
-    "sourceCommit": "98853f34516646cb7c4c1460f09249b262c0269e"
+    "sourceHash": "v1-e439bc8cb320171e9ba1d51ab71420911db7cadd825c18f9ebc2bbf8250caed3",
+    "sourceCommit": "ca52e7ed1e1ccad897c2da1b0fa105edc0bc3b2e"
   }
 }
